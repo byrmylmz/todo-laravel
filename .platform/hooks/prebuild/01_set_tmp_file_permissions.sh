@@ -6,6 +6,6 @@
 # to some folders that should be writable, such as the storage/
 # or bootstrap/cache/, for example.
 
-sudo chmod -R 777 storage/
-sudo chmod -R 777 bootstrap/cache/
+sudo chmod -R 755 storage/
+
 
