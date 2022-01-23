@@ -13,7 +13,7 @@ class AuthController extends Controller
         $http = new \GuzzleHttp\Client;
 
         try {
-            $response = $http->post('http://todo-laravel.test/oauth/token', [
+            $response = $http->post('http://todo-laravel.test/api/auth', [
                 'form_params' => [
                     'grant_type' => 'password',
                     'client_id' => 4,
@@ -46,6 +46,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'trial_until'=>now()->addDays(14),
         ]);
     }
 
